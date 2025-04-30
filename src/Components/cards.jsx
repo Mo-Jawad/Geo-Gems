@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
 const Cards = ({ filteredUsers}) => {
+
+    const createSlug = (name) => 
+        name.replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+
     return (
         <div className="flex w-[95%] flex-wrap gap-10 justify-evenly py-6">
             
@@ -8,7 +12,7 @@ const Cards = ({ filteredUsers}) => {
             filteredUsers.map(dhaicha =>
                 
                 <div key={dhaicha.id} className="w-full h-fit  max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 p-3 hover:scale-105 transition-transform hover:shadow-2xl hover:shadow-green-700 cursor-pointer">
-                    <Link  to={`/dhaincha/${dhaicha.Name}/`}>
+                    <Link  to={`/${createSlug(dhaicha.Name)}/`}>
     <img className="object-cover w-full h-64 rounded-md" src={dhaicha.image} alt="avatar"/>
     <a href="#" className="font-serif block text-yellow-500 pt-7 text-3xl font-bold text-center" tabIndex="0" role="link">{dhaicha.Name}</a>
     <div className="pb-5 font-bold text-center">

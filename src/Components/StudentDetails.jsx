@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 function StudentDetails() {
-  const { studentId } = useParams();
-  console.log(studentId)
+  const { slug } = useParams();
   const [dhainchas, setDhainchas] = useState({});
   const [loading, setLoading] = useState(true)
 
   useEffect( () => {
      const fetchDatafunc = async () => {
       try {
-        const responded = await fetch('../../public/Datafet.json');
+        const responded = await fetch('/Datafet.json');
         console.log(responded)
         if (!responded.ok) {
           throw new Error('Failed to fetch data');
@@ -20,7 +19,7 @@ function StudentDetails() {
         const dataInt = await responded.json();
         console.log(dataInt);
         
-        const found = dataInt.Dhaicha.find(stu => stu.Name.toLowerCase() === studentId.toLowerCase());
+        const found = dataInt.Dhaicha.find(stu => stu.Name.toLowerCase() === slug.replace(/-/g, ' ').toLowerCase());
 
         setDhainchas(found)
 
@@ -44,7 +43,7 @@ function StudentDetails() {
       
   fetchDatafunc()
 
-}, [studentId]);
+}, [slug]);
 
   return (
     <div className=' h-[42rem] w-full p-4 pt-8 bg-gray-700 items-center '>

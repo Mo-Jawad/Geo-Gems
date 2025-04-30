@@ -34,7 +34,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<MainContent searchQuery={searchQuery}/>} />
-          <Route path="/dhaincha/:studentId/" element={<StudentDetails />} />
+          <Route path="/:slug/" element={<StudentDetails />} />
             
         </Routes>
         <Footer footerRef={footerRef}/>
