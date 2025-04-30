@@ -10,7 +10,7 @@ const Footer = ({footerRef}) => {
         <a href="https://www.facebook.com/share/15qoZMzH3d/" target='_blank'>
         <figure className="flex items-center mb-4 md:mb-0">
           <img
-            src="/src/assets/images/jawad.jpg" // Replace with your photo URL
+            src="public\assets\images\footer_jawad.jpg" // Replace with your photo URL
             alt="Creator"
             className="h-40 w-70  rounded-md transition-normal hover:scale-105 hover:origin-bottom hover:-rotate-6 duration-300 object-cover hover:shadow-green-300 shadow-md"
           />
