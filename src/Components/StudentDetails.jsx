@@ -67,9 +67,9 @@ function StudentDetails() {
 
                 { dhainchas?.bloodGroup != null && (<div className="text-2xl text-green-400">Blood Group: {dhainchas.bloodGroup}</div>)}
 
-                {(dhainchas?.behavior != null && dhainchas.id !== 8) && (
+                {(dhainchas?.behavior != null) && (
                   <div className='flex-col items-start space-y-2 text-green-400 font-normal font-serif'>
-                    <div className='w-full '>characteristics:</div>
+                    <div className='w-full text-2xl text-yellow-300'>diagnostic property:</div>
 
                     <ul>
                       {dhainchas.behavior?.map((behave, index) => <div className='pl-12'><li key={index}>  {`    ${index + 1}.  
