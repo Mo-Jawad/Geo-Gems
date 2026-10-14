@@ -5,6 +5,7 @@ import Footer from './Components/Footer';
 import Header from './Components/Header';
 import MainContent from './Components/MainContent';
 import StudentDetails from './Components/StudentDetails';
+import Gallery from './Components/Gallery';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<MainContent searchQuery={searchQuery}/>} />
+          <Route path="/gallery" element={<Gallery searchQuery={searchQuery} />} />
           <Route path="/:slug/" element={<StudentDetails />} />
             
         </Routes>
