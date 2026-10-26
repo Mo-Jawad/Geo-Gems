@@ -4,8 +4,8 @@ import './App.css';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import MainContent from './Components/MainContent';
-import StudentDetails from './Components/StudentDetails';
 import Gallery from './Components/Gallery';
+import Projects from './Components/Projects';
 
 function App() {
 
@@ -36,8 +36,8 @@ function App() {
         <Routes>
           <Route path="/" element={<MainContent searchQuery={searchQuery}/>} />
           <Route path="/gallery" element={<Gallery searchQuery={searchQuery} />} />
-          <Route path="/:slug/" element={<StudentDetails />} />
-            
+          <Route path="/projects" element={<Projects searchQuery={searchQuery} />} />
+          <Route path="/project" element={<Projects searchQuery={searchQuery} />} />
         </Routes>
         <Footer footerRef={footerRef}/>
     </Router>

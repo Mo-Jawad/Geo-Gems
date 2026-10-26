@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { galleryImages } from '../data/galleryData';
+import { galleryImages } from '../data/data';
+import RippleButton from './ui/RippleButton';
 
 const Gallery = ({ searchQuery = '' }) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -265,18 +266,20 @@ const Gallery = ({ searchQuery = '' }) => {
                   <span className="hidden sm:inline">Use ← → arrow keys</span>
                 </div>
                 <div className="flex gap-2 sm:gap-3">
-                  <button
+                  <RippleButton
                     onClick={handlePrev}
                     className="flex-1 py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg bg-gray-800 hover:bg-gray-700 text-white font-semibold text-xs sm:text-sm transition-colors border border-gray-700 flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    rippleColor="rgba(255, 255, 255, 0.25)"
                   >
                     &larr; Prev
-                  </button>
-                  <button
+                  </RippleButton>
+                  <RippleButton
                     onClick={handleNext}
                     className="flex-1 py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg bg-amber-500 hover:bg-amber-400 text-gray-900 font-bold text-xs sm:text-sm transition-colors shadow-md flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400"
+                    rippleColor="rgba(0, 0, 0, 0.25)"
                   >
                     Next &rarr;
-                  </button>
+                  </RippleButton>
                 </div>
               </div>
             </div>
